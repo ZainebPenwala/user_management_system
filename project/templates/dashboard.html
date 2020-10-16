@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-md-9">
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}><span style="color: darkgreen ; font-size: larger;">{{ message }}</span></li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+        <div class="container">
+            <br>
+            <h4>Employee Profile</h4><br>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Submit</button>
+            </form>    
+        </div>
+    </div>
+</div>
+{% endblock content %}

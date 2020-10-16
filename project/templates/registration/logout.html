@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br>
+<h2 style="color:slategray ; text-align:center">GoodBye!</h2>
+<br>
+  <p style="color:slategray ; text-align:center">You have been successfully logged out.</p>
+  <br>
+  <h5 style="text-align: center; text-decoration: underline;"><a href="{% url 'login' %}">Log in again</a></h5>
+{% endblock %}

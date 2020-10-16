@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-9">
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> <strong><span style="color: red;">{{ message }}</span></strong> </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+        <div class="container">
+
+<h4>User Authentication</h4>
+<br>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="token">Enter Token:</label>
+    <input type="text" id="token" name="token">
+    <br><br>
+    <button type="submit">Authenticate</button>
+</form>
+
+{% endblock content %}
