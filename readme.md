@@ -6,12 +6,30 @@ Create a Restful API for Registration, Login & getUserList, along with an authen
  - Backend Framework: Django
  - Authenticaton Protocol: JSON Web Tokens (JWT)
  - Frontend Technologies: Twitter Bootstrap, HTML, CSS, JQuery
+ - Database: SQLite3
 
+# File Structure
+ - requirements.txt: contains the Python packages used
+ - antarctica_project: this folder contains the entire project's configurations
+ - user_auth: this folder contains the core business logic of the registration, login, logout,       UserList and the authentication flows
+ - user_auth/templates: contains the HTML files
+ - user_auth/static: contains the CSS and JavaScript files along with images used in the application
+ - models.py: this file contains the schema of the database table that stores employee details
 
-Created a web page using django template that has features like login, logout, register a new user, diplay the user profile and a list of users.
-The following are the API endpoints included here:
-1) login/ -  to login a registered user with a username and password
-2) logout/ -  logout a user
-3) dashboard/ - to create a user/employee profile which captures the first name, last name, email id, unique employee id and organisation name
-4) registration/ -  to register a new user based on a unique email id and password
-5) userlist/ -  a list of all the users displayed to teh authenticated person
+ # Database Schema
+The project contains the following database tables to store the user data
+ - auth_user: an inbuilt django model that stores the user information; used to maintain sessions
+ - Employee: stores the employee details like user_id, first_name, last_name, email, employee_id, organisation, created_at. This is used to display the userList table.
+
+# API Endpoints
+The following are the API endpoints:
+ - login/ -  to login a registered user with a username and password
+ - logout/ -  logout a user
+ - dashboard/ - it provides a form that captures the employee details from the user
+ - registration/ -  to register a new user based on a unique email id and password
+ - userlist/ -  a list of all the users displayed to the authenticated person
+
+# Flows
+ - Session Management
+    - The session management flows provides the users the functionalities to register, login and  logout in the application.
+![alt text](https://github.com/zainebpenwala/user_management_system/images/images/image (44).png)
