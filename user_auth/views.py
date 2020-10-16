@@ -1,7 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-# from django.contrib.auth.decorators import login_required
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.contrib.auth import login, authenticate, logout
@@ -9,10 +8,7 @@ from .forms import EmployeeForm, RegistrationForm, CustomAuthenticationForm
 from .models import Employee
 from django.contrib import messages
 from django.contrib.auth.views import LoginView
-# from .forms import CustomAuthenticationForm
 import jwt
-
-
 
 SECRET_KEY = 'ANTARCTICA123'
 
@@ -25,9 +21,6 @@ class CustomLoginView(LoginView):
 class Home(View):
 	def get(self, request):
 		return render(request, 'home.html')
-
-	def post(self, request):
-		pass
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -79,7 +72,6 @@ class Dashboard(View):
             return render(request, 'dashboard.html', {'form': form})
         else:
             return redirect("/login")
-            # return render(request, 'login.html')
 
     def post(self, request):
         form = EmployeeForm(request.POST)
