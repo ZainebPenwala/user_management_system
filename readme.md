@@ -32,4 +32,5 @@ The following are the API endpoints:
 # Flows
  - Session Management
     - The session management flows provides the users the functionalities to register, login and  logout in the application.
-![alt text](https://github.com/zainebpenwala/user_management_system/images/images/image (44).png)
+    ![alt text](https://github.com/ZainebPenwala/user_management_system/blob/main/images/image%20(44).png)
+
